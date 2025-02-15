@@ -1,0 +1,31 @@
+* @Audited is not working for base classes you have to explicitly declare for concrete sub classes.
+
+* @Profile({"Tomcat & Linux"}) to activate a component while multiple profile selected
+@ConditionalOnExpression("#{environment.acceptsProfiles('Tomcat') && environment.acceptsProfiles('Linux')}")
+
+* https://www.baeldung.com/spring-validation-message-interpolation (validasyon mesajları)
+
+*  Not audited bir relationu audited entity üzerinden kurmak için aşağıdaki yolu izleriz.
+
+   @ManyToOne
+   @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
+   @JoinColumn(name = "source_id", insertable = false, updatable = false)
+   private FindingSource source;
+
+* RelationEntity composite key declaration
+
+@Entity
+@Table(name="ApkInfos")
+@IdClass(ApkInfo.class)
+public class ApkInfo implements Serializable {
+
+   @Column @Id private String deviceId;
+   @Column @Id private String packageName;
+
+   @ManyToOne
+   @JoinColumn(name="deviceId" referencedColumnName="deviceId", insetable=false, updatable=false)
+   private Device device;
+
+
+  //getters and setters missing
+}
