@@ -1,6 +1,5 @@
-package com.icdenge.config;
+package com.icdenge.config.security;
 
-import com.icdenge.common.enums.UserRole;
 import java.util.Optional;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

@@ -3,6 +3,7 @@ package com.icdenge.exception.advice.managed;
 import com.icdenge.infrastructure.I18nMessageUtil;
 import com.icdenge.exception.ErrorResponseDTO;
 import com.icdenge.exception.unchecked.*;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import static com.icdenge.exception.ErrorResponseDTO.newError;
 import static org.springframework.http.HttpStatus.*;
 
 @Slf4j
+@Hidden
 @ControllerAdvice
 @RequiredArgsConstructor
 public class ManagedExceptionHandler {

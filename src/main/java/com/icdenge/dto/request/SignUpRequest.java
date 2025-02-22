@@ -1,32 +1,24 @@
 package com.icdenge.dto.request;
 
-import com.icdenge.common.enums.UserRole;
-import jakarta.validation.constraints.Email;
+import com.icdenge.common.utils.validation.email.ValidEmail;
+import com.icdenge.config.security.UserRole;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.time.LocalDate;
+
+import lombok.*;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
 public class SignUpRequest {
 
-  @NotBlank(message = "")
-  @Size(max = 40, message = "")
-  @Email(message = "amannnnnnn")
-  private String email;
-  @NotBlank(message = "")
-  private String username;
+  @ValidEmail private String email;
   private String name;
   private String surname;
-
-  @NotBlank
-  @Size(min = 6, max = 20, message = "")
-  private String password;
-
+  @NotBlank private String password;
+  private LocalDate birthDate;
   private UserRole role;
 }
+

@@ -4,6 +4,7 @@ import static org.springframework.http.HttpStatus.*;
 
 import com.icdenge.infrastructure.I18nMessageUtil;
 import com.icdenge.exception.ErrorResponseDTO;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Slf4j
+@Hidden
 @ControllerAdvice
 @RequiredArgsConstructor
 public class RuntimeExceptionHandler {

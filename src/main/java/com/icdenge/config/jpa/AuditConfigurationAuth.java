@@ -1,6 +1,6 @@
 package com.icdenge.config.jpa;
 
-import com.icdenge.config.SecurityUtils;
+import com.icdenge.config.security.SecurityUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;

@@ -1,5 +1,6 @@
 package com.icdenge.dto.request;
 
+import com.icdenge.common.utils.validation.email.ValidEmail;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class LoginRequest implements Serializable {
 
-  private String principal;
+  @ValidEmail
+  private String email;
   private String password;
 }
